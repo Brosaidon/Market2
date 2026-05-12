@@ -8,6 +8,6 @@ app.MapGet("/", () => Results.Content(LayoutHtml.Page("<p>Welcome to Market</p>"
         "text/html")
 );
 
-app.MapGet("/market", () => Results.Content(MarketHtml.Page(""), "text/html"));
+app.MapGet("/market", () => Results.Content(LayoutHtml.Page(MarketHtml.Page("")), "text/html"));
 
 app.Run();
