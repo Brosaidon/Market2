@@ -1,13 +1,9 @@
 using Web.Layout;
-using Web.marketHtml;
+using Web.Market;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => Results.Content(LayoutHtml.Page("<p>Welcome to Market</p>"),
-        "text/html")
-);
-
-app.MapGet("/market", () => Results.Content(LayoutHtml.Page(MarketHtml.Page("")), "text/html"));
-
+app.MapMarket();
+app.MapLayout();
 app.Run();
